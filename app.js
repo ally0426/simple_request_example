@@ -3,7 +3,8 @@ var express = require("express"),
 	morgan = require("morgan"),
 	bodyParser = require("body-parser"),
 	request = require("request"),
-	requestUrl = "https://fs-student-roster.herokuapp.com/students";
+	// requestUrl = "http://localhost:5000/students";
+	requestUrl = "https://g22-students.herokuapp.com/students";
 
 require("locus");
 app.set("view engine", "jade");
@@ -16,12 +17,22 @@ app.get("/", function(req,res){
 
 app.post('/students', function(req,res){
 	// request code here
-	request.post(requestUrl, function(err, response, body){
+	var options = {
+		method: "POST",
+		uri: requestUrl,
+		headers: {
+		    'Accept': 'application/json',
+		    'content-type': 'application/json'
+		},
+		form: req.body
+	};
+	request(options, function(err, response, body){
+		console.log(err);
 		if (err || response.statusCode >= 400) {
 			res.render("failure");
 		}
 		else {
-			res.redirect("/");
+			res.render("success");
 		}
 	});
 	
