@@ -37,11 +37,11 @@ The next argument is the `response` object. This object contains useful info abo
 
 Finally, we come to the `body`. This is often the meat of what we are looking for. It will contain the data you were requesting from the server. Remember, the type of the data coming back is still a string because it is fresh off the wire so you will need to `JSON.parse` it. 
 
-While this way of making requests is useful for understanding the basics of the module, but it is very limiting because it only allows for GET requests. Further, we can't add any custom headers or anything else that may need to be added to the request. So, when we need a little more, it is useful to pass in an object as the first parameter with keys and values that allow us to be more specific about the request.
+While this way of making requests is useful for understanding the basics of the module, it is very limiting because it only allows for GET requests. Further, we can't add any custom headers or anything else that may need to be added to the request. So, when we need a little more, it is useful to pass in an object as the first parameter with keys and values that allow us to be more specific about the request.
 
 ```
 request({
-  uri: "http://workbook.galvanize.com",
+  url: "http://workbook.galvanize.com",
   method: "DELETE",
   timeout: 10000,
   headers: {
