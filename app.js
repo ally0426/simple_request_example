@@ -1,12 +1,14 @@
 var express = require("express"),
 	app = express(),
 	bodyParser = require("body-parser"),
+	morgan = require("morgan"),
 	request = require("request"),
 	requestUrl = "https://fs-student-roster.herokuapp.com/students";
 
 require("locus");
 app.set("view engine", "jade");
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(morgan("dev"));
 
 
 app.get("/", function(req,res){
