@@ -24,7 +24,7 @@ Lets begin with the simplest request:
 ```
 request('http://workbook.galvanize.com', function (error, response, body) {
   if (!error && response.statusCode == 200) {
-    console.log(body) // Show the HTML for the Google homepage.
+    console.log(body) // Show the HTML for the Workbook homepage.
   }
 })
 ```
