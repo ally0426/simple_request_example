@@ -2,7 +2,7 @@
 
 According to [the docs](https://github.com/request/request), "Request is designed to be the simplest way possible to make http calls." Just by using a simple require statement we are given access to all of the verbs needed to interact with other servers. 
 
-##Why server-side requests?
+## Why server-side requests?
 
 Same-Origin Policy. The same-origin policy is a policy browsers implement that permits scripts contained on one site to access data on another web page, but only if both web pages have the same origin. This prevents a malicious script on one page from obtaining access to sensitive data on another.
 
@@ -10,7 +10,7 @@ Basically, from the browser you are only allowed to make HTTP calls to the thing
 
 However, we have no such restrictions when dealing with server-side code! Therefore, we have a lot more flexibility and can access far more APIs.
 
-##How?
+## How?
 
 It's simple. First, run `npm install --save request`. Then require the module:
 
